@@ -29,7 +29,7 @@ int MyStack::stackLength(){
 }
 bool MyStack::push(string elem){
 	if(stackFull()) {
-		cout << " ջΪ�� ���ܲ�ֵ"; 
+		cout << " 栈为满 不能插值"; 
 		return false;
 	}
 	m_pBuffer[m_iTop] = elem;
@@ -38,14 +38,14 @@ bool MyStack::push(string elem){
 }
 bool MyStack::pop(string &elem){
 	if(stackEmpty()) {
-		cout << " ջΪ�� ����ȡֵ";
+		cout << " 栈为空 不能取值";
 	return false;
 	}
 	m_iTop--; 
 	elem = m_pBuffer[m_iTop];
 	return true;
 }
-void MyStack::stackTraverse(bool isFromBottom){
+void MyStack::stackTraverse(bool isFromBottom){      //自底向上遍历
 	if (isFromBottom == true){
 		for(int i = 0;i < m_iTop; i++){
 			cout << m_pBuffer[i] << " ";
@@ -53,7 +53,7 @@ void MyStack::stackTraverse(bool isFromBottom){
 		}
 		cout << endl;
 	}
-	if (isFromBottom == false){
+	if (isFromBottom == false){                   //自顶向下遍历
 		for(int i = m_iTop - 1;i >= 0; i--){
 			cout << m_pBuffer[i] << " ";
 		}
